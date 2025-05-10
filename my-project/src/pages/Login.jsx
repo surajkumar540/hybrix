@@ -4,6 +4,7 @@ import { validateLogin } from "../utils/validate"; // Import validation function
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import bgImage from "../assets/loginImg.png";
 
+
 const Login = ({ setAuth }) => {
   const [formValues, setFormValues] = useState({ email: "", password: "" });
   const [error, setError] = useState({});
