@@ -3,6 +3,7 @@ import { BiLeftArrow, BiLogOut, BiMoney } from "react-icons/bi";
 import { BsFilePerson } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 import { TbWorldShare } from "react-icons/tb";
+import entraLogo from "../../assets/entraLogo.png";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -41,6 +42,36 @@ const Sidebar = () => {
       path: "/invitation-list",
       icon: BiMoney,
     },
+    {
+      name: "Book Meeting Room",
+      path: "/invitation-list",
+      icon: BiMoney,
+    },
+    {
+      name: "Calendar View",
+      path: "/invitation-list",
+      icon: BiMoney,
+    },
+    {
+      name: "Meeting Room View",
+      path: "/invitation-list",
+      icon: BiMoney,
+    },
+    {
+      name: "Settings",
+      path: "/invitation-list",
+      icon: BiMoney,
+    },
+    {
+      name: "Emergency Alert",
+      path: "/invitation-list",
+      icon: BiMoney,
+    },
+    {
+      name: "Helpdesk",
+      path: "/invitation-list",
+      icon: BiMoney,
+    },
   ];
 
   //  logout function
@@ -53,8 +84,8 @@ const Sidebar = () => {
   return (
     <div
       className={`${
-        collapsed ? "w-20" : "w-64"
-      } h-screen bg-white  rounded-tr-2xl border border-gray-100 flex flex-col transition-all duration-300 ease-in-out   ${
+        collapsed ? "w-20" : "w-56"
+      } h-screen bg-[#F1F4F8]  rounded-tr-2xl border border-gray-100 flex flex-col transition-all duration-300 ease-in-out   ${
         isMobile ? "" : "relative"
       }`}
     >
@@ -62,21 +93,37 @@ const Sidebar = () => {
       <div className="flex items-center justify-between p-4 ">
         {!collapsed && (
           <div className="flex items-center">
-            <h2 className="text-xl font-bold ml-2">ENTRA</h2>
+            {/*entra logo */}
+
+            <img
+              src={entraLogo}
+              alt="Entra Logo"
+              className="h-8 w-8 rounded-full"
+            />
+            <h2 className="text-xl font-bold ml-2">Entra</h2>
           </div>
         )}
-        {collapsed && <div className="mx-auto font-bold text-xl">EN.</div>}
+        {collapsed && (
+          <div className="flex justify-center items-center gap-1">
+            <img
+              src={entraLogo}
+              alt="Entra Logo"
+              className="h-6 w-6 rounded-full"
+            />
+            <div className="mx-auto font-bold text-xl">EN.</div>
+          </div>
+        )}
       </div>
 
       {/* Navigation */}
       <nav className="flex-1 overflow-y-auto py-4">
         <ul>
           {navItems.map((item) => (
-            <li key={item.path} className="mb-1 ">
+            <li key={item.path} className="mb-1  ">
               <Link
                 to={item.path}
                 className={`
-                  flex items-center justify-center py-3  rounded-lg transition-colors duration-200
+                  flex items-center px-3 py-1.5 rounded-md transition-colors duration-200
                   ${
                     location.pathname === item.path
                       ? "bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] text-white"
@@ -85,10 +132,7 @@ const Sidebar = () => {
                 `}
                 onClick={() => isMobile && setCollapsed(true)}
               >
-                <item.icon
-                  className={`${collapsed ? "mx-auto" : "mr-3"} text-lg`}
-                />
-                {!collapsed && <span>{item.name}</span>}
+                <span className="text-xs sm:text-sm">{item.name}</span>
               </Link>
             </li>
           ))}
@@ -96,7 +140,7 @@ const Sidebar = () => {
       </nav>
 
       {/* User Profile */}
-      <div
+      {/* <div
         className={`p-4  flex ${collapsed ? "justify-center" : "items-center"}`}
       >
         {collapsed ? (
@@ -114,7 +158,7 @@ const Sidebar = () => {
             </div>
           </>
         )}
-      </div>
+      </div> */}
 
       {/* Logout Button */}
       <div className="p-4  mt-auto">
