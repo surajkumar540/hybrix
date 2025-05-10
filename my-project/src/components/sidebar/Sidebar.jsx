@@ -66,7 +66,7 @@ const Sidebar = () => {
   return (
     <div
       className={`${
-        collapsed ? "w-20" : "w-56"
+        collapsed ? "w-24" : "w-56"
       } h-screen bg-[#F1F4F8]  rounded-tr-2xl border border-gray-100 flex flex-col transition-all duration-300 ease-in-out   ${
         isMobile ? "" : "relative"
       }`}
@@ -105,7 +105,7 @@ const Sidebar = () => {
               <Link
                 to={item.path}
                 className={`
-                  flex items-center px-3 py-1.5 rounded-md transition-colors duration-200
+                  flex items-center px-1 sm:pl-8 py-2 rounded-md transition-colors duration-200
                   ${
                     location.pathname === item.path
                       ? "bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] text-white"
@@ -114,7 +114,9 @@ const Sidebar = () => {
                 `}
                 onClick={() => isMobile && setCollapsed(true)}
               >
-                <span className="text-xs sm:text-sm">{item.name}</span>
+                <span className="text-xs sm:text-sm font-semibold">
+                  {item.name}
+                </span>
               </Link>
             </li>
           ))}
