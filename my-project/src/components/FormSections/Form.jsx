@@ -1,5 +1,7 @@
 import { ChevronDown, Plus } from "lucide-react";
+import { useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
+import VisitorInvitePopup from "../modal/VisitorInvitePopup";
 
 const Form = ({
   formData,
@@ -11,6 +13,8 @@ const Form = ({
   handleRemoveVisit,
   handleAddVisit,
 }) => {
+  // State for popup visibility
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   // Options for select fields
   const purposeOptions = [
     "Meeting",
@@ -39,6 +43,39 @@ const Form = ({
     "West Branch",
   ];
   const vehicleOptions = ["Car", "Motorcycle", "Van", "Truck", "None"];
+
+  // Handle invite (open popup)
+  const handleInvite = () => {
+    setIsPopupOpen(true);
+  };
+
+  // Close popup
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
+  const isFormValid = () => {
+    const requiredFields = [
+      "mobileNumber",
+      "fullName",
+      "emailId",
+      "purpose",
+      "entryPoint",
+      "host",
+      "branch",
+      "vehicle",
+      "vehicleNumber",
+      "date",
+      "visitDay",
+      "time",
+      "meetingRoom",
+    ];
+
+    return requiredFields.every(
+      (field) => formData[field]?.toString().trim() !== ""
+    );
+  };
+
   return (
     <div className="bg-white rounded-2xl flex-1 overflow-y-auto p-4 py-10">
       {/* Form Container */}
@@ -368,7 +405,15 @@ const Form = ({
 
         {/* Form Actions */}
         <div className="flex flex-wrap mt-6">
-          <button className="bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] text-white py-1 px-8 sm:px-16  rounded mb-2 mr-2">
+          <button
+            disabled={!isFormValid()}
+            className={`   text-white py-1 px-8 sm:px-16  rounded mb-2 mr-2 ${
+              isFormValid()
+                ? " bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1]"
+                : "bg-gray-300 "
+            }`}
+            onClick={handleInvite}
+          >
             Invite
           </button>
           <button
@@ -379,6 +424,13 @@ const Form = ({
           </button>
         </div>
       </div>
+
+      {/* Visitor Invite Popup */}
+      <VisitorInvitePopup
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+        formData={formData}
+      />
     </div>
   );
 };
