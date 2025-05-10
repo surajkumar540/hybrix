@@ -49,7 +49,7 @@ const Form = ({
     setIsPopupOpen(true);
   };
 
-  // Close popup
+  // Close popup and reset form
   const closePopup = () => {
     setIsPopupOpen(false);
     handleReset();
