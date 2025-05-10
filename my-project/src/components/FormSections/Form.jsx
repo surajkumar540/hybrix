@@ -368,11 +368,11 @@ const Form = ({
 
         {/* Form Actions */}
         <div className="flex flex-wrap mt-6">
-          <button className="bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] text-white py-1 px-16  rounded mb-2 mr-2">
+          <button className="bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] text-white py-1 px-8 sm:px-16  rounded mb-2 mr-2">
             Invite
           </button>
           <button
-            className="bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] text-white py-1 px-16  rounded mb-2"
+            className="bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] text-white py-1 px-8 sm:px-16  rounded mb-2"
             onClick={handleReset}
           >
             Reset

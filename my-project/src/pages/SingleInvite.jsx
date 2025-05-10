@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Plus, ChevronDown } from "lucide-react";
-import { FaRegTrashAlt } from "react-icons/fa";
 import HeaderTab from "../components/FormSections/HeaderTab";
 import Form from "../components/FormSections/Form";
 
