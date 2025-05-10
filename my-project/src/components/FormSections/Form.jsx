@@ -52,6 +52,7 @@ const Form = ({
   // Close popup
   const closePopup = () => {
     setIsPopupOpen(false);
+    handleReset();
   };
 
   const isFormValid = () => {
@@ -358,6 +359,7 @@ const Form = ({
                   </label>
                   <input
                     type="text"
+                    placeholder="Enter Visit Day"
                     className="w-full border border-gray-300 rounded p-2"
                   />
                 </div>
