@@ -1,4 +1,5 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Plus } from "lucide-react";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 const Form = ({
   formData,
@@ -39,7 +40,7 @@ const Form = ({
   ];
   const vehicleOptions = ["Car", "Motorcycle", "Van", "Truck", "None"];
   return (
-    <div className="bg-white rounded-2xl flex-1 overflow-y-auto p-4">
+    <div className="bg-white rounded-2xl flex-1 overflow-y-auto p-4 py-10">
       {/* Form Container */}
       <div className="rounded-lg p-4 md:p-6   mb-4">
         <h2 className="text-lg font-medium mb-4">

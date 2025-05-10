@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BiLeftArrow, BiLogOut, BiMoney } from "react-icons/bi";
-import { BsFilePerson } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
-import { TbWorldShare } from "react-icons/tb";
 import entraLogo from "../../assets/entraLogo.png";
 
 const Sidebar = () => {
@@ -35,51 +32,36 @@ const Sidebar = () => {
     {
       name: "Invite Visitor",
       path: "/single-invite",
-      icon: TbWorldShare,
     },
     {
       name: "Invitation List",
-      path: "/invitation-list",
-      icon: BiMoney,
+      path: "/#",
     },
     {
       name: "Book Meeting Room",
-      path: "/invitation-list",
-      icon: BiMoney,
+      path: "/#",
     },
     {
       name: "Calendar View",
-      path: "/invitation-list",
-      icon: BiMoney,
+      path: "/#",
     },
     {
       name: "Meeting Room View",
-      path: "/invitation-list",
-      icon: BiMoney,
+      path: "/#",
     },
     {
       name: "Settings",
-      path: "/invitation-list",
-      icon: BiMoney,
+      path: "/#",
     },
     {
       name: "Emergency Alert",
-      path: "/invitation-list",
-      icon: BiMoney,
+      path: "/#",
     },
     {
       name: "Helpdesk",
-      path: "/invitation-list",
-      icon: BiMoney,
+      path: "/#",
     },
   ];
-
-  //  logout function
-  // const handleLogout = () => {
-  //   console.log("User logged out");
-  //   localStorage.removeItem("auth"); // Remove only auth-related data
-  //   window.location.reload();
-  // };
 
   return (
     <div
@@ -118,8 +100,8 @@ const Sidebar = () => {
       {/* Navigation */}
       <nav className="flex-1 overflow-y-auto py-4">
         <ul>
-          {navItems.map((item) => (
-            <li key={item.path} className="mb-1  ">
+          {navItems.map((item, index) => (
+            <li key={index} className="mb-1  ">
               <Link
                 to={item.path}
                 className={`
@@ -138,38 +120,6 @@ const Sidebar = () => {
           ))}
         </ul>
       </nav>
-
-      {/* User Profile */}
-      {/* <div
-        className={`p-4  flex ${collapsed ? "justify-center" : "items-center"}`}
-      >
-        {collapsed ? (
-          <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
-            SK
-          </div>
-        ) : (
-          <>
-            <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold">
-              SK
-            </div>
-            <div className="ml-3">
-              <p className="text-sm font-medium">Suraj Kumar</p>
-              <p className="text-xs text-gray-400">Frontend dev.</p>
-            </div>
-          </>
-        )}
-      </div> */}
-
-      {/* Logout Button */}
-      {/* <div className="p-4  mt-auto">
-        <button
-          onClick={handleLogout}
-          className="w-full flex items-center justify-center py-2 px-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition-all text-white"
-        >
-          <BiLogOut className="text-lg" />
-          {!collapsed && <span className="ml-2">Logout</span>}
-        </button>
-      </div> */}
 
       {/* Mobile Overlay */}
       {isMobile && !collapsed && (

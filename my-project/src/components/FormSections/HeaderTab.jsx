@@ -1,13 +1,12 @@
-
 const HeaderTab = ({ inviteType, handleInviteTypeChange }) => {
   return (
-    <div className=" bg-[#DCEDF4] sticky top-0 z-10 ">
+    <div className=" bg-[#DCEDF4] sticky top-0 z-10 bg-red ">
       {/* Fixed Header */}
       <div className="container mx-auto ">
         {/* Fixed Invite Type Selector */}
         <div className="flex flex-wrap mb-4">
           <button
-            className={`py-2 px-4 rounded-md ${
+            className={`py-1 px-4 rounded-md ${
               inviteType === "single"
                 ? "bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] text-white"
                 : "text-black"
@@ -17,7 +16,7 @@ const HeaderTab = ({ inviteType, handleInviteTypeChange }) => {
             Single Invite
           </button>
           <button
-            className={`py-2 px-4 rounded-md ${
+            className={`py-1 px-4 rounded-md ${
               inviteType === "bulk"
                 ? "bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] text-white"
                 : "text-black"
@@ -27,7 +26,7 @@ const HeaderTab = ({ inviteType, handleInviteTypeChange }) => {
             Bulk Invite
           </button>
           <button
-            className={`py-2 px-4 rounded-md ${
+            className={`py-1 px-4 rounded-md ${
               inviteType === "meeting"
                 ? "bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] text-white"
                 : "text-black"
