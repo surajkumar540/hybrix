@@ -75,11 +75,11 @@ const Sidebar = () => {
   ];
 
   //  logout function
-  const handleLogout = () => {
-    console.log("User logged out");
-    localStorage.removeItem("auth"); // Remove only auth-related data
-    window.location.reload();
-  };
+  // const handleLogout = () => {
+  //   console.log("User logged out");
+  //   localStorage.removeItem("auth"); // Remove only auth-related data
+  //   window.location.reload();
+  // };
 
   return (
     <div
@@ -161,7 +161,7 @@ const Sidebar = () => {
       </div> */}
 
       {/* Logout Button */}
-      <div className="p-4  mt-auto">
+      {/* <div className="p-4  mt-auto">
         <button
           onClick={handleLogout}
           className="w-full flex items-center justify-center py-2 px-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition-all text-white"
@@ -169,7 +169,7 @@ const Sidebar = () => {
           <BiLogOut className="text-lg" />
           {!collapsed && <span className="ml-2">Logout</span>}
         </button>
-      </div>
+      </div> */}
 
       {/* Mobile Overlay */}
       {isMobile && !collapsed && (
