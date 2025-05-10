@@ -1,12 +1,36 @@
-# React + Vite
+# Invite Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple invitation web app that includes a **Login Screen**, a **Single Invite Form**, and a **Popup Confirmation Screen**. It demonstrates form validation, conditional rendering, dynamic form manipulation, and modal interactions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+### 🔐 Login Screen
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Mandatory Fields**: All input fields are required.
+- **Validation**: Displays error messages if any field is left empty.
+- **Navigation**: On successful login, users are redirected to the **Single Invite** page.
+
+---
+
+### 📋 Single Invite Form
+
+- **Form Layout**: Designed based on the provided UI mockup.
+- **Recurrence Feature**: 
+  - A checkbox to show/hide the recurrence form section.
+  - Users can add additional recurrence rows dynamically.
+- **Reset Functionality**:
+  - Clears all form fields including text inputs and date selectors.
+- **Invite Button**:
+  - Opens a popup with form data displayed as a summary (based on the provided design).
+
+---
+
+### 💬 Popup Screen
+
+- **Design**: Matches the provided popup design.
+- **Close Button**: Closes the popup and resets the form fields.
+- **Form Reset**: Ensures the form is cleared once the popup is closed.
+
+---
