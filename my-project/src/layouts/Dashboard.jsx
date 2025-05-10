@@ -6,7 +6,6 @@ const Dashboard = () => {
   return (
     <div className="flex h-screen bg-[#DCEDF4] overflow-hidden">
       <Sidebar />
-      {/* overflow not on inside form i can scroll */}
       <div className="flex-1 mx-2 px-4 ">
         <Navbar />
         <Outlet />

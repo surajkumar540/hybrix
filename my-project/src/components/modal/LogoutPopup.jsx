@@ -1,5 +1,3 @@
-import React from "react";
-
 const LogoutPopup = ({ showModal, setShowModal, handleLogout }) => {
   return (
     <div>
