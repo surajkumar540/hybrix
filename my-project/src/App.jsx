@@ -1,3 +1,12 @@
-export default function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+// import { store } from "./redux/store";
+import AppRoutes from "./routes/AppRoutes";
+
+function App() {
+  return (
+    // <Provider store={store}>
+    <AppRoutes />
+    // </Provider>
+  );
 }
+
+export default App;
