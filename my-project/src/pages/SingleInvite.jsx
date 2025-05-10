@@ -20,12 +20,7 @@ export default function SingleInvite() {
   });
   const [inviteType, setInviteType] = useState("single");
   const [recurrence, setRecurrence] = useState(false);
-  const [recurringVisits, setRecurringVisits] = useState([
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-  ]);
+  const [recurringVisits, setRecurringVisits] = useState([{ id: 1 }]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

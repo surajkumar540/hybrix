@@ -340,7 +340,7 @@ const Form = ({
 
         {recurrence && (
           <>
-            {recurringVisits.map((visit) => (
+            {recurringVisits.map((visit, index) => (
               <div
                 key={visit.id}
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4 relative"
@@ -375,14 +375,20 @@ const Form = ({
                   <div className="flex">
                     <input
                       type="text"
+                      placeholder="Enter Meeting Room"
                       className="w-full border border-gray-300 rounded p-2"
                     />
-                    <button
-                      className="ml-2 bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] rounded-full text-white p-3.5 flex-shrink-0"
-                      onClick={() => handleRemoveVisit(visit.id)}
-                    >
-                      <FaRegTrashAlt size={14} />
-                    </button>
+
+                    {/* by default first recrunce can not be */}
+
+                    {index !== 0 && (
+                      <button
+                        className="ml-2 bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] rounded-full text-white p-3.5 flex-shrink-0"
+                        onClick={() => handleRemoveVisit(visit.id)}
+                      >
+                        <FaRegTrashAlt size={14} />
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>

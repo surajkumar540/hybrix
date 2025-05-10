@@ -71,15 +71,15 @@ const Login = ({ setAuth }) => {
           <form onSubmit={handleSubmit}>
             <div className="text-center mb-6">
               <h2 className="text-2xl font-bold text-gray-800">Welcome,</h2>
-              <p className="text-[#1E1E1E] font-semibold mt-1">Login to continue to ENTRA.</p>
+              <p className="text-[#1E1E1E] font-semibold mt-1">
+                Login to continue to ENTRA.
+              </p>
             </div>
-
             {error.general && (
               <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
                 <p className="text-red-700 text-sm">{error.general}</p>
               </div>
             )}
-
             {/* Email Input */}
             <div className="mb-5">
               <label className="block text-gray-700 text-sm font-medium mb-2">
@@ -99,9 +99,8 @@ const Login = ({ setAuth }) => {
                 <p className="text-red-500 mt-1 text-xs">{error.email}</p>
               )}
             </div>
-
             {/* Password Input */}
-            <div className="mb-6 relative">
+            <div className="mb-2 relative">
               <label className="block text-gray-700 text-sm font-medium mb-2">
                 Password
               </label>
@@ -127,6 +126,12 @@ const Login = ({ setAuth }) => {
               )}
             </div>
 
+            <div className="flex items-center mb-4">
+              <label htmlFor="remember" className="ml-2  text-sm font-semibold">
+                Forgot Your Password?
+              </label>
+            </div>
+
             {/* Remember Me */}
             <div className="flex items-center mb-6">
               <input
@@ -136,12 +141,11 @@ const Login = ({ setAuth }) => {
               />
               <label
                 htmlFor="remember"
-                className="ml-2 block text-sm text-gray-700"
+                className="ml-2 block text-sm text-gray-800"
               >
-                Remember me
+                Remember Me
               </label>
             </div>
-
             {/* Submit Button */}
             <button
               className="bg-gradient-to-r from-[#2F9DCB] to-[#61B0D1] text-white py-3 w-full rounded-lg font-medium transition duration-200 transform hover:scale-[1.02]"
@@ -150,6 +154,9 @@ const Login = ({ setAuth }) => {
               Sign In
             </button>
           </form>
+
+          <p className="text-xs mt-2">Email- suraj@test.com</p>
+          <p className="text-xs mt-2">Pass- suraj@1234</p>
         </div>
       </div>
     </div>
