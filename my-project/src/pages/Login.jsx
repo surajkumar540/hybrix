@@ -49,7 +49,7 @@ const Login = ({ setAuth }) => {
 
   return (
     <div
-      className="relative h-screen w-full bg-cover bg-center"
+      className="relative h-screen w-full bg-contain bg-center"
       style={{ backgroundImage: `url(${bgImage})` }} // Replace with your image path
     >
       {/* Black Overlay */}

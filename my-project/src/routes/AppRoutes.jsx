@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Login from "../pages/Login";
+import Dashboard from "../layouts/Dashboard";
+import SingleInvite from "../pages/SingleInvite";
 
 const AppRoutes = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(
@@ -31,13 +33,15 @@ const AppRoutes = () => {
       <Routes>
         <Route
           path="/"
-          element={<Navigate to={isAuthenticated ? "/customers" : "/login"} />}
+          element={
+            <Navigate to={isAuthenticated ? "/single-invite" : "/login"} />
+          }
         />
         <Route
           path="/login"
           element={
             isAuthenticated ? (
-              <Navigate to="/customers" />
+              <Navigate to="/single-invite" />
             ) : (
               <Login setAuth={setIsAuthenticated} />
             )
@@ -47,7 +51,9 @@ const AppRoutes = () => {
         {/* Protected Routes */}
         <Route
           element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />}
-        ></Route>
+        >
+          <Route path="/single-invite" element={<SingleInvite />} />
+        </Route>
 
         {/* Catch-All Route if you redirect and random route */}
         <Route
@@ -63,7 +69,7 @@ const AppRoutes = () => {
 const ProtectedRedirect = ({ isAuthenticated }) => {
   const location = useLocation();
   return isAuthenticated ? (
-    <Navigate to="/customers" />
+    <Navigate to="/single-invite" />
   ) : (
     <Navigate to="/login" state={{ from: location }} />
   );
